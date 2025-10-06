@@ -1,0 +1,12 @@
+prefix=c:/Users/DELL/OneDrive/Desktop/EDA3/myenv/Library
+exec_prefix=c:/Users/DELL/OneDrive/Desktop/EDA3/myenv/Library
+libdir=c:/Users/DELL/OneDrive/Desktop/EDA3/myenv/Library/lib
+includedir=c:/Users/DELL/OneDrive/Desktop/EDA3/myenv/Library/include
+
+Name: libzmq
+Description: 0MQ c++ library
+Version: 4.3.5
+Libs: -L${libdir} -lzmq
+Libs.private: 
+Requires.private: 
+Cflags: -I${includedir} 
