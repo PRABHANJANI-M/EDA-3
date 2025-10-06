@@ -1,80 +1,88 @@
-# 💤 Sleep Health and Lifestyle Analysis
-📌 Overview
+# Sleep Health and Lifestyle Analysis
+Overview
 
-This project explores the relationship between lifestyle factors and sleep quality using the Sleep Health and Lifestyle dataset.
-It focuses on understanding how stress, physical activity, occupation, and age influence an individual's sleep duration and overall health.
+This project analyzes the Sleep Health and Lifestyle Dataset, aiming to understand the patterns in sleep duration, sleep quality, physical activity, stress levels, and related health factors. The dataset contains demographic information along with sleep habits and lifestyle metrics of individuals.
 
-🎯 Objectives
+The analysis includes data cleaning, outlier handling, statistical analysis, and visualization to derive meaningful insights.
 
-Analyze the effect of stress, activity level, and BMI on sleep duration.
+# Dataset Features
 
-Study correlations between different health parameters such as heart rate, age, and daily steps.
+The dataset contains the following key columns:
 
-Identify lifestyle patterns that contribute to better or poorer sleep quality.
-
-Visualize relationships and distributions through meaningful charts and heatmaps.
-
-# 📂 Dataset Description
-
-The dataset includes various physiological and lifestyle-related features:
-
-Column	Description
-Person ID	Unique identifier for each individual
-Gender	Male or Female
-Age	Age of the individual
-Occupation	Type of job or profession
-Sleep Duration	Average hours of sleep per day
-Quality of Sleep	Sleep quality rating on a scale of 1 to 10
-Physical Activity Level	Daily activity score
+Feature	Description
+Person ID	Unique identifier for each participant
+Gender	Gender of the participant (Male/Female)
+Age	Age of the participant
+Occupation	Participant’s occupation
+Sleep Duration	Average sleep hours per day
+Quality of Sleep	Self-reported sleep quality (1–10)
+Physical Activity Level	Average physical activity level (minutes/day)
 Stress Level	Self-reported stress level (1–10)
-BMI Category	Underweight, Normal, Overweight, or Obese
-Blood Pressure	Systolic/Diastolic measurement
-Heart Rate	Average beats per minute
-Daily Steps	Average number of steps per day
-Sleep Disorder	Type of sleep disorder, if any (None, Insomnia, Apnea)
-# ⚙️ Analysis Summary
+BMI Category	Body Mass Index category (Normal/Overweight/Obese)
+Blood Pressure	Systolic/Diastolic blood pressure reading
+Heart Rate	Average heart rate (bpm)
+Daily Steps	Number of steps taken per day
+Sleep Disorder	Type of sleep disorder, if any
+# Data Cleaning & Preprocessing
 
-Performed Exploratory Data Analysis (EDA) to understand data distribution and detect missing values.
+Remove duplicates: Ensured no repeated records.
 
-Examined relationships between sleep duration, stress, and physical activity.
+Handle missing values:
 
-Created correlation heatmaps to identify strongly related variables.
+Numerical columns → filled with median
 
-Visualized sleep disorder patterns across different occupations and age groups.
+Categorical columns → filled with mode
 
-Generated summary statistics to compare the influence of gender, BMI, and lifestyle factors on sleep quality.
+Outlier removal: Used Z-score method to remove extreme values beyond 3 standard deviations.
 
-# 📊 Key Insights
+Normalization: Applied log transformation for skewed numeric columns.
 
-Individuals with high stress levels generally experience shorter sleep duration.
+Exploratory Data Analysis (EDA)
 
-Physical activity has a positive impact on sleep quality.
+Distribution plots: Visualized sleep duration, stress levels, and physical activity.
 
-Occupation type affects sleep pattern — students and healthcare workers often have irregular or insufficient sleep.
+Boxplots: Compared sleep duration across occupations.
 
-Heart rate and BMI category show a noticeable link with stress and sleep disorders.
+# Gender-based analysis:
 
-The heatmap revealed strong negative correlations between stress and sleep duration.
+Compared average sleep duration between males and females.
 
-# 🧠 Tools and Technologies
+Conducted T-test to check for statistically significant differences.
 
-Python for data analysis
+Sleep disorder analysis: Pie chart showing distribution of sleep disorders grouped by gender.
 
-Pandas for data handling
+# Statistical Analysis
 
-NumPy for numerical calculations
+Skewness checked for all numeric columns to ensure normality.
 
-Matplotlib and Seaborn for visualizations
+T-test example:
 
-# 🚀 Results and Conclusion
+Null hypothesis (H0): No difference in sleep duration between genders
 
-The analysis highlights that balanced physical activity, reduced stress, and maintaining a healthy BMI contribute to better sleep quality.
-By understanding these correlations, this study emphasizes the importance of lifestyle choices in improving sleep health and overall well-being.
+Result: Significant difference found (p-value < 0.05)
 
-# 🌟 Future Enhancements
+# Key Insights
 
-Build a predictive model to estimate sleep quality or detect sleep disorders.
+Average sleep duration and quality differ across occupations and genders.
 
-Develop an interactive dashboard for visual analysis of individual health metrics.
+Higher stress levels often correspond to lower sleep quality.
 
-Integrate additional parameters such as diet, caffeine intake, and screen time for deeper insights.
+Outliers in metrics like daily steps and heart rate can distort overall analysis, hence removed.
+
+Skewed numeric columns normalized for better statistical analysis.
+
+Visualization Examples
+
+Sleep Duration by Occupation: Bar plot/boxplot
+
+Average Sleep Duration, Stress, and Quality: Histogram or line plots
+
+Gender-based Sleep Duration: T-test visualized via boxplot
+
+Sleep Disorder Distribution by Gender: Pie chart
+
+# Tools & Libraries
+
+Python Libraries: pandas, numpy, matplotlib, seaborn, scipy
+
+Environment: Jupyter Notebook / Google Colab
